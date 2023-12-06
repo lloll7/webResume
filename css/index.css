@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 方正北魏楷书简体;
+}
+a {
+  text-decoration: none;
+  color: rgb(1, 157, 235);
+}
+ul {
+  list-style: none;
+}
+.bell {
+  position: absolute;
+  top: 0;
+  right: 30%;
+  width: 59px;
+  height: 107px;
+  background: url("../img/bell.png");
+  margin: 0 auto;
+  transform-origin: center top;
+  animation: test 1.2s ease-in-out infinite alternate;
+}
+@keyframes test {
+  0% {
+    transform: rotate(50deg);
+  }
+  100% {
+    transform: rotate(-50deg);
+  }
+}
+/* 公共样式 */
+.outer {
+  position: relative;
+}
+.part {
+  margin: 40px 0;
+}
+.list_outer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.list {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-left: 3px solid #0ea5e9;
+  padding: 5px 10px;
+}
+.list li {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+.list li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #0ea5e9;
+}
+.title_word {
+  width: inherit;
+  font-size: 25px;
+  font-weight: 500;
+}
+.title_word::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: inherit;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+/* 偏移背景 */
+.backGround {
+  position: absolute;
+  width: 800px;
+  height: 2137px;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%) rotate(-3deg);
+  border-radius: 15px;
+  background: linear-gradient(to left, rgb(3, 161, 253), rgb(9, 213, 240));
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+/* 简历容器 */
+.container {
+  position: absolute;
+  width: 800px;
+  left: 50%;
+  top: 30px;
+  transform: translateX(-50%);
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  padding: 50px;
+}
+.container .resume {
+  display: flex;
+  align-items: center;
+}
+.container .self_photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.container .message {
+  display: grid;
+  grid-template-columns: repeat(2, 280px);
+  grid-template-rows: repeat(3, 33px);
+  grid-auto-flow: column;
+}
+/* 个人信息部分 */
+.self_message {
+  width: 100%;
+}
+.self_message .name {
+  display: flex;
+  align-items: baseline;
+  height: 51px;
+}
+.self_message .name p:nth-child(1) {
+  font-size: 35px;
+  font-weight: 700;
+}
+.self_message .name p:nth-child(2) {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+.self_message .message {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.self_message .contact,
+.self_message .baseInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+.self_message .avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar .avatar-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 专业技能部分 */
+.skills {
+  display: grid;
+  width: inherit;
+  height: inherit;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 25px;
+  justify-items: center;
+  margin-top: 20px;
+}
+.skills .item {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  line-height: 130px;
+  text-align: center;
+}
+.skills .item::before {
+  content: "";
+  position: absolute;
+  transform: rotate(45deg);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 5px solid #c3f1f8;
+  box-sizing: border-box;
+}
+.skills .level1::before {
+  border-top-color: #0ea5e9;
+}
+.skills .level2::before {
+  border-top-color: #0ea5e9;
+  border-right-color: #0ea5e9;
+}
+.skills .item.level3::before {
+  border-top-color: #0ea5e9;
+  border-right-color: #0ea5e9;
+  border-bottom-color: #0ea5e9;
+}
+.skills .item.level4::before {
+  border-color: #0ea5e9;
+}
+/* 项目经验部分 */
+.projectTitle {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  grid-area: 1/1 / 2/3;
+}
+.projectContent {
+  display: grid;
+  width: inherit;
+  height: 350px;
+  grid-template-columns: 2fr 9fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 7fr;
+}
+/* 自我评价部分 */
+.intro {
+  margin-top: 15px;
+  font-size: 20px;
+  line-height: 35px;
+  color: rgba(0, 0, 0, 0.6);
+}
